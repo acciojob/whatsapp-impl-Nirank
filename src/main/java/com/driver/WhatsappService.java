@@ -18,7 +18,7 @@ public class WhatsappService {
         return repository.createGroup(users);
     }
     public int sendMassageTogroup(Message message, User sender, Group group) throws Exception {
-        return repository.sendMassageTogroup(message,sender,group);
+        return repository.sendMassageToGroup(message,sender,group);
     }
     public String changeAdmin(User approver, User user, Group group) throws Exception {
         return repository.changeAdmin(approver,user,group);
