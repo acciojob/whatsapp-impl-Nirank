@@ -43,7 +43,7 @@ public class WhatsappRepository {
             return "SUCCESS";
         }
         else{
-            throw new Exception("User Already Exist");
+            throw new Exception("User already exists");
         }
     }
     public Group createGroup(List<User>users){
@@ -53,7 +53,7 @@ public class WhatsappRepository {
             groupUserMap.put(group,users);
         }
         else{
-            ++customGroupCount;
+            customGroupCount+=1;
             group = new Group("Group "+customGroupCount, users.size());
             groupUserMap.put(group,users);
         }
@@ -80,7 +80,7 @@ public class WhatsappRepository {
             }
             throw new Exception("You are not allowed to send message");
         }
-        throw new Exception("Group doesn't exist");
+        throw new Exception("Group does not exist");
     }
     public String changeAdmin(User approver, User user, Group group) throws Exception {
         if(adminMap.containsKey(group)&&groupUserMap.containsKey(group)){
@@ -99,7 +99,7 @@ public class WhatsappRepository {
         throw new Exception("Group does not exist");
     }
     public int createMessage(String message){
-        ++messageId;
+        messageId+=1;
         return messageId;
     }
 }
